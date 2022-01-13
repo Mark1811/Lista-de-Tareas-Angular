@@ -4,11 +4,24 @@
            <h1>Lista de Tareas</h1>
         <div class="col-sm">
             <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Task" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Agregar</button>
+                <input class="form-control me-2" name="tarea" type="text" placeholder="Task" [(ngModel)]="captarTarea">
+                <input type="button" value="agregar" (click)="addTask()">
             </form>
         </div>
     </div>
 </div>
-
+ <br>
+ 
 <!--Mostrar-->
+
+<div class="container-sm d-flex justify-content-center">
+  <div class="row">
+     <div class="col-sm">
+         <ul class="list-group" >
+            <li class="list-group-item list-group-item-primary" *ngFor="let elem of ListArray; let i=index">
+                {{i+1}})  {{elem.nameList}} 
+            </li>
+          </ul>
+     </div>    
+  </div>  
+</div>
