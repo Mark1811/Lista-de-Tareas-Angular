@@ -1,11 +1,12 @@
 <!--Text Agregar-->
-<div class="container-sm d-flex justify-content-center">
-    <div class="row">
-           <h1>Lista de Tareas</h1>
+<h1>Lista de Tareas</h1>
+<div class="container-sm d-flex justify-content-center ">
+    <div class="row" style="width: 500px;">
+          
         <div class="col-sm">
-            <form class="d-flex">
-                <input class="form-control me-2" name="tarea" type="text" placeholder="Task" [(ngModel)]="captarTarea">
-                <input type="button" value="agregar" (click)="addTask()">
+            <form class="d-flex ">
+                <input class="form-control me-3" name="tarea" type="text" placeholder="Task" [(ngModel)]="captarTarea">
+                <input type="button" value="Agregar" (click)="addTask()">
             </form>
         </div>
     </div>
@@ -14,14 +15,23 @@
  
 <!--Mostrar-->
 
-<div class="container-sm d-flex justify-content-center">
-  <div class="row">
-     <div class="col-sm">
+<div class="container-sm justify-content-center d-flex" >
+  <div class="row " style="width: 500px;">
+     <div class="col-sm-12" >
+        
          <ul class="list-group" >
-            <li class="list-group-item list-group-item-primary" *ngFor="let elem of ListArray; let i=index">
-                {{i+1}})  {{elem.nameList}} 
+            <li class="list-group-item list-group-item-light shadow-lg mb-3 bg-body rounded d-flex justify-content-between "  *ngFor="let elem of ListArray; let i=index" >
+              {{i+1}})  {{elem.nameList}}  
+               <span>
+                <button type="button" class="btn-close" aria-label="Close"></button>
+               </span>
+                  
             </li>
-          </ul>
-     </div>    
-  </div>  
+           
+         </ul>
+    
+     </div> 
+      
+  </div>
+      
 </div>

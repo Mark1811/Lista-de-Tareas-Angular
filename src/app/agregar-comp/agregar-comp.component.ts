@@ -12,7 +12,7 @@ export class AgregarCompComponent implements OnInit {
   captarTarea:string="";
    
   ListArray:ListaTareas[]=[
-     new ListaTareas("Limpiar")
+    
    ];
 
   constructor() { }
