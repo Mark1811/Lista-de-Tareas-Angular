@@ -10,16 +10,37 @@ import { ListaTareas } from '../ObjectTareas/lista-tareas';
 export class AgregarCompComponent implements OnInit {
      
   captarTarea:string="";
-   
-  ListArray:ListaTareas[]=[
-    
-   ];
-
+  ListArray:ListaTareas[]=[];
+  habilitar=false;
+  
+  
+  
+  
   constructor() { }
 
   ngOnInit(): void {
+     
   }
    addTask(){
-       this.ListArray.push(new ListaTareas(this.captarTarea));
+       if(this.captarTarea==""){
+        this.habilitar=true;
+      }else{
+       this.ListArray.push(new ListaTareas(this.captarTarea)) ;
+       this.captarTarea=""; 
+       this.habilitar=false;
+      
+      }   
+    }
+
+   elimiList(valor:number){
+    this.ListArray.splice(valor,1);
+    
    }
+    
+    
+  
+   
+  
+   
+
 }
