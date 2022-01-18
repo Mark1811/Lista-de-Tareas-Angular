@@ -1,5 +1,8 @@
+import { style } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ListaTareas } from '../ObjectTareas/lista-tareas';
+import { ServicioTaskService } from '../servicioTareas/servicio-task.service';
 
 
 @Component({
@@ -10,13 +13,18 @@ import { ListaTareas } from '../ObjectTareas/lista-tareas';
 export class AgregarCompComponent implements OnInit {
      
   captarTarea:string="";
-  ListArray:ListaTareas[]=[];
+  editid:string;
   habilitar=false;
+  habili=true;
   
   
   
+  ListArray:ListaTareas[]=[];
+
   
-  constructor() { }
+  constructor(private router:Router, private ServApp:ServicioTaskService) {
+    this.ListArray=this.ServApp.ListAdd;
+   }
 
   ngOnInit(): void {
      
@@ -25,22 +33,34 @@ export class AgregarCompComponent implements OnInit {
        if(this.captarTarea==""){
         this.habilitar=true;
       }else{
-       this.ListArray.push(new ListaTareas(this.captarTarea)) ;
+       
+       let NuevaTarea = new ListaTareas(this.captarTarea,this.ListArray.length+1,false,false);
+       this.ServApp.addTaskServicio(NuevaTarea);
        this.captarTarea=""; 
        this.habilitar=false;
-      
+    
       }   
     }
 
-   elimiList(valor:number){
-    this.ListArray.splice(valor,1);
-    
+   elimiList(elem:number){
+    this.ListArray.splice(elem,1);
+  
    }
-    
-    
-  
-   
-  
-   
+   editar(index:number){
+     
+ }
+
+ toggleEdit(event:ListaTareas){
+   event.editar=!event.editar;
+   this.habili=false;
+ }
+
+ doneEditing(task:ListaTareas){
+   if(task.nameList.trim().length===0){
+      task.nameList=this.editid;
+   }
+   task.editar=false;
+ }
+
 
 }

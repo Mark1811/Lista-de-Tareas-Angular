@@ -5,3 +5,49 @@ h1{
     
 }
 
+@font-face {
+    font-family: 'icomoon';
+    src:  url('./icono/fonts/icomoon.eot?e797pm');
+    src:  url('./icono/fonts/icomoon.eot?e797pm#iefix') format('embedded-opentype'),
+      url('./icono/fonts/icomoon.ttf?e797pm') format('truetype'),
+      url('./icono/fonts/icomoon.woff?e797pm') format('woff'),
+      url('./icono/fonts/icomoon.svg?e797pm#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    border: none;
+    background: #fff;
+    color: rgba(85, 87, 84, 0.822);
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-pencil:before {
+    content: "\e905";
+  }
+  .icon-pencil:hover{
+    color:cornflowerblue
+  }
+  .textoin{
+    margin-bottom: -20px;
+    
+  }
+  .btn{
+     position: relative;
+      bottom: 38px;
+      left: 420px;
+  }
+  
