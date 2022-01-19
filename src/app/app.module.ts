@@ -4,21 +4,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AgregarCompComponent } from './agregar-comp/agregar-comp.component';
 import { FormsModule } from '@angular/forms';
-import { EditarCompComponent } from './editar-comp/editar-comp.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MostrarAlertComponent } from './mostrar-alert/mostrar-alert.component';
 import { ServicioTaskService } from './servicioTareas/servicio-task.service';
 
 const RutasApp:Routes=[
 
-   { path:'',component:AgregarCompComponent},
-   { path:'Editar', component:EditarCompComponent}
+   { path:'',component:AgregarCompComponent}
+   
 ];
 @NgModule({
   declarations: [
     AppComponent,
     AgregarCompComponent,
-    EditarCompComponent,
     MostrarAlertComponent
   ],
   imports: [

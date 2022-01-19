@@ -53,14 +53,11 @@ export class AgregarCompComponent implements OnInit {
        elem.editar=!elem.editar;
        this.capturaredit="";
 
- }
+   }
 
  ActEdit(event:ListaTareas){
    event.editar=!event.editar;
    this.habili=false;
- }
-
- 
-
+   }
 
 }
