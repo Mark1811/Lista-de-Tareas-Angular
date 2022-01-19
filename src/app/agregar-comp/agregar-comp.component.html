@@ -35,8 +35,8 @@
              
              <div *ngIf="elem.editar" class="textoin animate__animated animate__fadeInDown animate__faster">
                <span>
-                <input  type="text" class="form-control" name="tarea" [(ngModel)]="elem.nameList">
-                <button type="button" class="btn" (click)="editar(elem)">save</button>
+                <input  type="text" class="form-control" name="tarea"[(ngModel)]="capturaredit" maxlength="60">
+                <button type="button" class="btn" (click)="editar(elem)" >save</button>
                </span>
              </div>  
         </ul>

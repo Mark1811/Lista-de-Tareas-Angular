@@ -1,4 +1,4 @@
-import { style } from '@angular/animations';
+
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ListaTareas } from '../ObjectTareas/lista-tareas';
@@ -16,6 +16,7 @@ export class AgregarCompComponent implements OnInit {
   editid:string;
   habilitar=false;
   habili=true;
+  capturaredit:string="";
 
   
   
@@ -48,12 +49,10 @@ export class AgregarCompComponent implements OnInit {
    }
 
    editar(elem:ListaTareas){
-     if(elem.nameList==""){
-       this.habilitar=true;
-     }
-     else{
+       elem.nameList=this.capturaredit;
        elem.editar=!elem.editar;
-     }
+       this.capturaredit="";
+
  }
 
  ActEdit(event:ListaTareas){
