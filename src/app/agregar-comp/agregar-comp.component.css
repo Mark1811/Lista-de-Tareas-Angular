@@ -41,13 +41,29 @@ h1{
   .icon-pencil:hover{
     color:cornflowerblue
   }
-  .textoin{
-    margin-bottom: -20px;
-    
-  }
+ 
   .btn{
      position: relative;
-      bottom: 38px;
-      left: 420px;
+     border:solid 2px rgb(255, 255, 255);
+     border-radius: 9px;
+     background: rgb(255, 255, 255);
+     margin-top: 10px;
+     margin-bottom: 30px;
+  }
+  .btn:hover{
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
   }
   
+  
+  .btn2{
+    
+      border:solid 2px rgb(255, 255, 255);
+      border-radius: 9px;
+      
+  }
+  .btn2:hover{
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+
+  }

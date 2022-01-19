@@ -9,7 +9,7 @@
         <div class="col-sm">
             <form class="d-flex ">
                 <input class="form-control me-3" name="tarea" type="text" placeholder="Task" [(ngModel)]="captarTarea">
-                <input type="button" value="Agregar" (click)="addTask()">
+                <input class="btn2" type="button" value="Agregar" (click)="addTask()">
             </form>
         </div>
     </div>
@@ -20,14 +20,15 @@
 
 <div class="container-sm justify-content-center d-flex">
   <div class="row" style="width: 500px;">
-     <div class="col-sm-12 " >
+     <div class="col-sm">
         
         <ul class="list-group" *ngFor="let elem of ListArray; let i=index" >
-            <li class="list-group-item list-group-item-light shadow-lg mb-3 rounded d-flex justify-content-between animate__bounceIn">
-               {{i+1}})  {{elem.nameList}} 
-               
+            <li class="list-group-item list-group-item-light shadow-lg mb-3 rounded d-flex justify-content-between animate__bounceIn" >
+              
+              {{i+1}})  {{elem.nameList}}
+              
               <span>
-                <button class="icon icon-pencil me-2" (click)=" toggleEdit(elem)"></button>
+                <button class="icon icon-pencil me-2" (click)=" ActEdit(elem)"></button>
                 <button type="button"  class="btn-close" aria-label="Close" (click)="elimiList(i)"> </button>
               </span>
             </li>
@@ -35,7 +36,7 @@
              <div *ngIf="elem.editar" class="textoin animate__animated animate__fadeInDown animate__faster">
                <span>
                 <input  type="text" class="form-control" name="tarea" [(ngModel)]="elem.nameList">
-                <button type="button" class="btn">save</button>
+                <button type="button" class="btn" (click)="editar(elem)">save</button>
                </span>
              </div>  
         </ul>
@@ -45,8 +46,3 @@
 </div>
 
 
-<!--mostar input editar
-<div class="container-sm" style="width: 480px;" >
- <input type="text" class="form-control me-3" name="tarea" [(ngModel)]="captarTarea">
-</div>
--->

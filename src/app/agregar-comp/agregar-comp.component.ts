@@ -16,7 +16,7 @@ export class AgregarCompComponent implements OnInit {
   editid:string;
   habilitar=false;
   habili=true;
-  
+
   
   
   ListArray:ListaTareas[]=[];
@@ -38,29 +38,30 @@ export class AgregarCompComponent implements OnInit {
        this.ServApp.addTaskServicio(NuevaTarea);
        this.captarTarea=""; 
        this.habilitar=false;
+      
     
       }   
     }
 
    elimiList(elem:number){
     this.ListArray.splice(elem,1);
-  
    }
-   editar(index:number){
-     
+
+   editar(elem:ListaTareas){
+     if(elem.nameList==""){
+       this.habilitar=true;
+     }
+     else{
+       elem.editar=!elem.editar;
+     }
  }
 
- toggleEdit(event:ListaTareas){
+ ActEdit(event:ListaTareas){
    event.editar=!event.editar;
    this.habili=false;
  }
 
- doneEditing(task:ListaTareas){
-   if(task.nameList.trim().length===0){
-      task.nameList=this.editid;
-   }
-   task.editar=false;
- }
+ 
 
 
 }
